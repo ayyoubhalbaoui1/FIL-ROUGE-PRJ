@@ -15,7 +15,7 @@
 
         <li><a href="index.php#section-5" onclick="javascript:window.open('index.php#section-5','_self')">
                 Contact</a></li>
-        <li><a href="subcat.php?catid=25" onclick="javascript:window.open('subcat.php?catid=25','_self')">Direction</a>
+        <li><a href="category.php" onclick="javascript:window.open('category.php','_self')">Direction</a>
         </li>
 
         <li><a href="admin/loginform.php" onclick="javascript:window.open('index.php#section-1','_self')">

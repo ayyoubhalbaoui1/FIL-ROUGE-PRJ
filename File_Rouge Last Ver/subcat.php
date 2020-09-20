@@ -9,12 +9,18 @@
         rel='stylesheet' type='text/css'>
     <link href="stylecss.css" rel='stylesheet' type='text/css' />
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/gallery-clean.css">
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
     addEventListener("load", function() {
@@ -29,111 +35,125 @@
     <script src="js/jquery.min.js"></script>
 
     <!--/js-->
-
-
-
     <style>
-    table {
+    .item {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .item-card {
+        transition: 0.5s;
+        /* cursor: pointer; */
+    }
+
+    .item-card-title {
+        font-size: 15px;
+        transition: 1s;
+        /* cursor: pointer; */
+    }
+
+    .item-card-title i {
+        font-size: 15px;
+        transition: 1s;
+        cursor: pointer;
+        color: #ffa710
+    }
+
+    .card-title i:hover {
+        transform: scale(1.25) rotate(100deg);
+        color: #18d4ca;
+
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-text {
+        height: 80px;
+    }
+
+    .card::before,
+    .card::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale3d(0, 0, 1);
+        transition: transform .3s ease-out 0s;
+        background: rgba(255, 255, 255, 0.1);
+        content: '';
+        pointer-events: none;
+    }
+
+    .card::before {
+        transform-origin: left top;
+    }
+
+    .card::after {
+        transform-origin: right bottom;
+    }
+
+
+    .card:hover::before,
+    .card:hover::after,
+    .card:focus::before,
+    .card:focus::after {
+        transform: scale3d(1, 1, 1);
+    }
+
+    .card {
+        display: inline-block;
+        margin: 0 auto;
+        /* Added */
+        float: right;
+        /* Added */
+        margin-bottom: 258px;
+        /* Added */
+        margin-left: 5%;
+        margin-top: -201px;
+        min-width: 0;
+        background-color: #F5F5F5;
+        background-clip: border-box;
+        ;
+
+
+
+
+    }
+
+
+
+    .card img {
+
         width: 100%;
-        border-collapse: colapse;
+        height: 15rem;
+
+        object-fit: cover;
+
 
     }
 
-    /* Zebra striping */
-    tr:nth-of-type(odd) {
-        /* background: #eee; */
+    .table {
+        width: 142%;
+        max-width: 115%;
+        margin-bottom: 20px;
     }
 
-    th {
-        /* background: #333; */
-        color: white;
-        font-weight: bold;
+    @media only screen and (max-width: 500px) {
+        .card {
+            margin-top: 6px;
+            margin-bottom: 38px;
+            margin-right: 87px;
+        }
     }
-
-
-    td,
-    th {
-        padding: 6px;
-        text-align: left;
-    }
-
-    @media only screen and (max-width: 760px),
-    (min-device-width: 768px) and (max-device-width: 1024px) {
-
-        /* Force table to not be like tables anymore */
-        .image {
-
-            /* height: 150px; */
-            width: 100%;
-            border-style: none;
-        }
-
-        button {
-            margin-left: -26px;
-        }
-
-        b {
-            float: left;
-            margin-left: 10px;
-            margin-left: -94px;
-        }
-
-        td a {
-            margin-left: 27px;
-        }
-
-        .headingText {
-            margin-top: -38px;
-            margin-left: -138%;
-
-
-
-        }
-
-        .paraText {
-            margin-left: -746px;
-        }
-
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr {
-            display: block;
-        }
-
-        /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
-
-        tr {
-            /* border: 1px solid #ccc; */
-        }
-
-        td {
-            /* Behave  like a "row" */
-            border: none;
-            /* border-bottom: 1px solid #eee; */
-            position: relative;
-            padding-left: 50%;
-            font-size: 15px;
-        }
-
-        td:before {
-            /* Now like a table header */
-            position: absolute;
-            /* Top/left values mimic padding */
-            top: 6px;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-        }
     </style>
+
+
+
+
 
 
 
@@ -146,17 +166,35 @@
     <br>
     <br>
     <br>
-    <div style="height:50px"></div>
-    <div style="width:1000px; margin:auto">
+    <br>
+    <br>
+    <br>
 
-        <div style="width:200px; float:left">
+    <div class="container gallery-container">
+
+        <h1>SubDirection</h1>
+
+
+
+
+
+
+        <div style="height:50px"></div>
+        <div style="width:1000px">
+
+            <!-- <div class="left">
 
             <table cellpadding="0" cellspacing="0" width="1000px">
                 <tr>
                     <td style="font-size:30px; color:#09F"><b>Direction</b></td>
-                </tr>
+                </tr> -->
 
-                <?php
+            <div class="fixed-top p-4">
+                <table class="table">
+                    <tr class="active">
+                        <th style="border: none;" scope="row">Direction</th>
+
+                        <?php
 
 $s="select * from category";
 $result=mysqli_query($cn,$s);
@@ -166,30 +204,25 @@ $r=mysqli_num_rows($result);
 while($data=mysqli_fetch_array($result))
 {
 	
-		echo "<tr><td style=' padding:5px;'><a href='subcat.php?catid=$data[0]'>$data[1]</a></td></tr>";
+		echo "<tr><td style=' border: none; font-weight: 800;'><a href='subcat.php?catid=$data[0]'>$data[1]</a></td></tr>";
 
 }
 
 ?>
+                    </tr>
 
-            </table>
+                </table>
 
+            </div>
         </div>
-
-        <div style="width:800px; float:left">
-            <table cellpadding="0px" cellspacing="0" width="1000px">
-                <tr>
-                    <td class="headingText">SubDirection</td>
-                </tr>
-                <tr>
-                    <td class="paraText" width="900px">
+    </div>
 
 
 
 
-                        <table cellpadding="0" cellspacing="0" width="900px">
-
-                            <?php
+    <div class="container">
+        <div class="row">
+            <?php
 
 $s="select * from subcategory where Catid='" .$_GET["catid"] . "'";
 $result=mysqli_query($cn,$s);
@@ -205,61 +238,46 @@ while($data=mysqli_fetch_array($result))
 
 
 
-                            <tr>
-                                <?php
+
+            <?php
 
 	}?>
-                                <td>
-                                    <table border="0" width="100px" bordercolor="#FF6666">
+
+            <div class="card shadow item-card card-block" style="width: 30rem;">
+                <img class="card-img-top" style="height:150px;
+  width:100%;" src="Admin/subcatimages/<?php echo $data[3]; ?>">
+                <div class="card-body">
+                    <br>
+                    <h5 class="card-title">City Name: <?php echo $data[1];?></h5>
+                    <br>
+                    <a href="offer.php?subcatid=<?php echo $data[0];?>" class="btn btn-primary">View
+                        Offer</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
 
 
-                                        <tr>
-                                            <td class="image"><img src="Admin/subcatimages/<?php echo $data[3]; ?>"
-                                                    width="250px" height="200px" /></td>
-                                        </tr>
-                                        <br>
-                                        <br>
 
-                                        <tr>
-                                            <td align="center"
-                                                style="  font-family: 'Open Sans', sans-serif; color:#333">
-                                                Name: <?php echo $data[1];?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" style="  font-family: 'Open Sans', sans-serif; ">
-                                                <a href="offer.php?subcatid=<?php echo $data[0];?>">
-                                                    <button class="btn btn-primary">View Details</button>
-                                                </a>
-                                            </td>
-                                        </tr>
 
-                                    </table>
-                                </td>
-                                <?php
+
+            <?php
 
 if($n%3==2)
 {
 ?>
-                            </tr>
 
-                            <?php
+
+            <?php
 }
 $n=$n+1;
 }
 mysqli_close($cn);
 ?>
 
-                        </table>
 
-
-
-
-                    </td>
-                </tr>
-            </table>
 
         </div>
-
     </div>
 
     <div style="clear:both"></div>

@@ -30,13 +30,19 @@
         window.scrollTo(0, 1);
     }
     </script>
+
+
     <!--js-->
     <script src="js/jquery.min.js"></script>
 
     <!--/js-->
+
+
 </head>
 
 <body>
+
+
 
     <!--header-->
     <?php include('top.php'); ?>
@@ -98,12 +104,12 @@ $data=mysqli_fetch_array($q);
                             <table border="0" width="100px" height="200px">
                                 <td>User Name</td>
                         </td>
-                        <td><input type="text" name="t1" required pattern="[a-zA-z _]{1,50}" title"Please Enter Only
+                        <td><input type="text" name="t1" required pattern="[a-zA-z _]{1,50}" title="Please Enter Only
                                 Characters between 1 to 50 for User Name" /></td>
                     </tr>
                     <tr>
                         <td class="lefttxt">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td><input type="password" name="t2" required pattern="[a-zA-z0-9]{1,10}" title"Please Enter
+                        <td><input type="password" name="t2" required pattern="[a-zA-z0-9]{1,10}" title="Please Enter
                                 Only Characters between 1 to 10 for Password" /></td>
                     </tr>
                 </table>
@@ -117,8 +123,9 @@ $data=mysqli_fetch_array($q);
 
                 </table>
             </form>
-
-
+            <br>
+            <br>
+            <br>
 
         </div>
 

@@ -31,13 +31,17 @@
         window.scrollTo(0, 1);
     }
     </script>
+
     <!--js-->
+
     <script src="js/jquery.min.js"></script>
 
     <!--/js-->
+
 </head>
 
 <body>
+
     <!--header-->
 
 
@@ -71,9 +75,6 @@ if(isset($_POST["sbmt"]))
         </div>
         <div class="col-sm-9">
 
-
-
-
             <form method="post">
                 <table border="0" width="400px" height="200px" align="center" class="tableshadow">
                     <tr>
@@ -89,9 +90,6 @@ if(isset($_POST["sbmt"]))
                         <td><input type="submit" value="SAVE" name="sbmt" /></td>
                     </tr>
 
-
-
-
                 </table>
             </form>
 
@@ -105,6 +103,7 @@ if(isset($_POST["sbmt"]))
     <br>
     <br>
 </body>
+
 <?php include('bottom.php'); ?>
 
 

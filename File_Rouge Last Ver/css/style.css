@@ -1,6 +1,6 @@
 .headingText {
     font-size: 28px;
-    color: #09F;
+    color: #fa9e1b;
     margin: 5px;
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
@@ -2272,17 +2272,9 @@ a {
 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
-    table {
-        /* float: left;
-        float: left;
-        margin-top: 1%;
-        margin-left: -9%; */
-    }
-    td {
-        /* float: left; */
-    }
     .tableshadow {
         width: 104%;
+        /* margin-top: -125%; */
     }
     .col-sm-9 {}
     form {

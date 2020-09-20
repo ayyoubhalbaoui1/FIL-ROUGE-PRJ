@@ -57,7 +57,8 @@ if(isset($_POST["sbmt"]))
 	$target_dir = "subcatimages/";
 	$target_file = $target_dir.basename($_FILES["t3"]["name"]);
 	$uploadok = 1;
-	$imagefiletype = pathinfo($target_file, PATHINFO_EXTENSION);
+    $imagefiletype = pathinfo($target_file, PATHINFO_EXTENSION);
+    
 	//check if image file is a actual image or fake image
 	
 	if(move_uploaded_file($_FILES["t3"]["tmp_name"], $target_file)){
@@ -89,7 +90,7 @@ else
 ?>
 
     <?php include('top.php'); ?>
-    <!--/sticky-->
+
     <div style="padding-top:100px; box-shadow:1px 1px 20px black; min-height:570px" class="container">
         <div class="col-sm-3" style="border-right:1px solid #999; min-height:450px;">
             <?php include('left.php'); ?>
@@ -103,10 +104,10 @@ else
                     </tr>
                     <tr>
                         <td class="lefttxt">Select SubDirection</td>
-                        <td><select name="s1" required />
-                            <option value="">Select</option>
+                        <td><select name="s1" required>
+                                <option value="">Select</option>
 
-                            <?php
+                                <?php
 $cn=makeconnection();
 $s="select * from subcategory";
 $result=mysqli_query($cn,$s);
@@ -167,11 +168,11 @@ mysqli_close($cn);
                     <tr>
                         <td class="lefttxt">Select Direction</td>
                         <td><select name="t2" value="<?php if(isset($_POST["show"])){ echo $Catid ;} ?> "
-                                required="required" pattern="[a-zA-z1 _]{1,50}" title"Please Enter Only Characters and
-                                numbers between 1 to 50 for Company name" />
-                            <option value="Select">Select</option>
+                                required="required" pattern="[a-zA-z1 _]{1,50}" title="Please Enter Only Characters and
+                                numbers between 1 to 50 for Company name">
+                                <option value="Select">Select</option>
 
-                            <?php
+                                <?php
 $cn=makeconnection();
 $s="select * from category";
 $result=mysqli_query($cn,$s);
@@ -207,7 +208,7 @@ mysqli_close($cn);
                     </tr>
                     <tr>
                         <td class="lefttxt">Details</td>
-                        <td><textarea name="t4" /><?php if(isset($_POST["show"])){ echo $Detail ;} ?></textarea></td>
+                        <td><textarea name="t4"><?php if(isset($_POST["show"])){ echo $Detail ;} ?></textarea></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>

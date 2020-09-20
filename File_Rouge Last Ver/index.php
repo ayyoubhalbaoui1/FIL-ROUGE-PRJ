@@ -61,15 +61,15 @@
 
                 <p>Our mission is create the best travel experience for our customers and it start since the moment that
                     you contact us to the moment that you are back at home and we will do this by:</p>
-                <p>&#9670; Matching hotels, activities, destinations with your most dreamt travel experience. We will
+                <p>&#10148; Matching hotels, activities, destinations with your most dreamt travel experience. We will
                     dig deep
                     in your past travel experiences, your likes, dislikes , your dreams, etc. so we can make sure that
                     you will be in the best place at the right time.</p>
-                <p>&#9670; Maintaining ourselves properly informed and trained in the always changing travel world.</p>
-                <p>&#9670; Looking for the best value products for our customers</p>
-                <p>&#9670; Offering a world class customer service experience that is open for our customers 24/7</p>
-                <p>&#9670; Going the extra mile to obtain customer satisfaction</p>
-                <p>&#9670; We want to help to build a better world for less fortunate children and for that reason we
+                <p>&#10148; Maintaining ourselves properly informed and trained in the always changing travel world.</p>
+                <p>&#10148; Looking for the best value products for our customers</p>
+                <p>&#10148; Offering a world class customer service experience that is open for our customers 24/7</p>
+                <p>&#10148; Going the extra mile to obtain customer satisfaction</p>
+                <p>&#10148; We want to help to build a better world for less fortunate children and for that reason we
                     support
                     organizations that work with them </p>
                 <br>
@@ -78,18 +78,18 @@
                 <h4>Travel safety</h4>
                 <br>
 
-                <p>&#9670; Keep your travel plans, including accommodation details, to yourself.</p>
-                <p>&#9670; Don't hitch hike.</p>
-                <p>&#9670; Try not to travel at night.</p>
-                <p>&#9670; Avoid 'seedier' areas of the cities you visit, especially at night.</p>
-                <p>&#9670; Ask your hotel manager for advice on 'safe' versus 'unsafe' local areas.</p>
-                <p>&#9670; As a general rule, city streets that include children and women suggest the area is safe for
+                <p>&#10148; Keep your travel plans, including accommodation details, to yourself.</p>
+                <p>&#10148; Don't hitch hike.</p>
+                <p>&#10148; Try not to travel at night.</p>
+                <p>&#10148; Avoid 'seedier' areas of the cities you visit, especially at night.</p>
+                <p>&#10148; Ask your hotel manager for advice on 'safe' versus 'unsafe' local areas.</p>
+                <p>&#10148; As a general rule, city streets that include children and women suggest the area is safe for
                     families. </p>
-                <p>&#9670; Carry with you at all times the contact details of the Australian embassy. If your city
+                <p>&#10148; Carry with you at all times the contact details of the Australian embassy. If your city
                     doesn't have an Australian embassy, find out which other country's embassy is available to help you,
                     such as the British embassy.</p>
-                <p>&#9670; Keep a photocopy of your passport and all other important documents in a safe place.</p>
-                <p>&#9670; Use ATMs during the day, when there are people around.</p>
+                <p>&#10148; Keep a photocopy of your passport and all other important documents in a safe place.</p>
+                <p>&#10148; Use ATMs during the day, when there are people around.</p>
 
             </div>
         </div>
@@ -112,7 +112,7 @@
 
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <a class="lightbox" href="../images/park.jpg">
+                                <a class="lightbox" href="../images/Fez-Morocco-2.webp">
                                     <img src="../images/Fez-Morocco-2.webp" alt="Park">
                                 </a>
                                 <div class="caption">
@@ -127,7 +127,8 @@
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <a class="lightbox" href="../images/bridge.jpg">
+                                <a class="lightbox"
+                                    href="../images/Marrakesh-best-things-to-do-Morocco-Woman-Gloria-Apara-Nomadicchica.com-7.jpg">
                                     <img src="../images/Marrakesh-best-things-to-do-Morocco-Woman-Gloria-Apara-Nomadicchica.com-7.jpg"
                                         alt="Bridge">
                                 </a>
@@ -144,7 +145,8 @@
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <a class="lightbox" href="../images/tunnel.jpg">
+                                <a class="lightbox"
+                                    href="../images/Think-Morocco-Casablanca-HassanIIMosque-543475836-hypen-copy - Copy.jpg">
                                     <img src="../images/Think-Morocco-Casablanca-HassanIIMosque-543475836-hypen-copy - Copy.jpg"
                                         alt="Tuneel">
                                 </a>
@@ -213,8 +215,8 @@ if(isset($_POST["sbmt"]))
                                             between 1 to 50 for Name"></td>
                                     </tr>
                                     <tr>
-                                        <td align="left"><input type="text" class="text" value=" Contact No" name="t2"
-                                                onFocus="this.value = '';"
+                                        <td align="left"><input type="text" class="text" value=" Your Number    "
+                                                name="t2" onFocus="this.value = '';"
                                                 onBlur="if (this.value == '') {this.value = 'Your Contact NO';}"
                                                 required pattern="[0-9]{10,12}" title="Please Enter Only numbers between 10 to 12 for
                                             Contact no"></td>

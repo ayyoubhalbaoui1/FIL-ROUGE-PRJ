@@ -137,13 +137,13 @@ mysqli_close($cn);
                     <tr>
                         <td class="lefttxt">Password</td>
                         <td><input type="password" value="<?php if(isset($_POST["show"])){ echo $Pass ;} ?>" name="t2"
-                                required pattern="[a-zA-z0-9]{1,10}" title"Please Enter Only Characters and numbers
+                                required pattern="[a-zA-z0-9]{1,10}" title="Please Enter Only Characters and numbers
                                 between 1 to 10 for Password" /></td>
                     </tr>
                     <tr>
                         <td class="lefttxt">Confirm Password</td>
                         <td><input type="password" value="<?php if(isset($_POST["show"])){ echo $Pass ;} ?>" name="t3"
-                                required pattern="[a-zA-z0-9]{1,10}" title"Please Enter Only Characters and numbers
+                                required pattern="[a-zA-z0-9]{1,10}" title="Please Enter Only Characters and numbers
                                 between 1 to 10 for Password" /></td>
                     </tr>
                     <tr>

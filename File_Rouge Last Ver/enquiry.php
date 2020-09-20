@@ -12,8 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/gallery-clean.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
     addEventListener("load", function() {
@@ -29,28 +33,46 @@
 
     <!--/js-->
     <style>
-    @media only screen and (max-width: 760px),
-    (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.25;
+    }
 
-        tbody {
-            margin-left: 10px;
-        }
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
 
-        table {
-            margin-left: 3%;
+    table caption {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+    }
 
+    table tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: .35em;
+    }
 
-        }
+    table th,
+    table td {
+        padding: .625em;
+        text-align: center;
+    }
 
-        .paraText table {
-            margin-left: -111px;
+    table th {
+        font-size: .85em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
 
-        }
-
-        .headingText {
-
-            margin-left: 1px;
-            float: left;
+    @media (min-width: 1200px) {
+        .container {
+            width: 856px;
         }
     }
     </style>
@@ -76,49 +98,26 @@ if(isset($_POST["sbmt"]))
     <br>
     <br>
     <br>
-    <div style="height:50px"></div>
-    <div style="width:1000px; margin:auto">
+    <?php include('slider.php'); ?>
 
-        <div style="width:200px; font-size:18px; color:#09F; float:left">
 
-            <table cellpadding="0" cellspacing="0" width="1000px">
-                <tr>
-                    <td style="font-size:18px" color="#09F">Category</td>
-                </tr>
-                <?php
+    <br>
 
-$s="select * from category";
-$result=mysqli_query($cn,$s);
-$r=mysqli_num_rows($result);
-//echo $r;
+    <div class="container">
+        <div class="row">
 
-while($data=mysqli_fetch_array($result))
-{
-	
-		echo "<tr><td style=' padding:5px;'><a href='subcat.php?catid=$data[0]'>$data[1]</a></td></tr>";
+            <div>
+                <table cellpadding="0px" cellspacing="0">
+                    <tr>
+                        <td class="headingText">Enquiry</td>
+                    </tr>
+                    <tr>
+                        <td class="paraText" width="900px">
+                            <table cellpadding="0" cellspacing="0">
+                                <td>
 
-}
-?>
-
-            </table>
-
-        </div>
-        <br>
-        <br>
-        <br>
-
-        <div style="width:800px; float:left">
-            <table cellpadding="0px" cellspacing="0" width="1000px">
-                <tr>
-                    <td class="headingText">Enquiry</td>
-                </tr>
-                <tr>
-                    <td class="paraText" width="900px">
-                        <table cellpadding="0" cellspacing="0" width="900px">
-                            <td>
-
-                                <table border="0" ; width="600px" height="400px" align="center">
-                                    <?php
+                                    <table border="0" ; width="600px" height="400px" align="center">
+                                        <?php
 
 $s="select * from offer,category,subcategory where offer.category=category.cat_id and offer.subcategory=subcategory.subcatid and offer.offerid='" . $_GET["pid"] ."'";
 
@@ -130,77 +129,91 @@ $data=mysqli_fetch_array($result);
 mysqli_close($cn);
 ?>
 
-                                    <form method="post" enctype="multipart/form-data">
-                                        <tr>
-                                            <td colspan="3" class="middletext">offer
-                                                Id:&nbsp;&nbsp;&nbsp;<?php echo $data[0];?></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" class="middletext">Offer
-                                                Name:&nbsp;&nbsp;&nbsp;<?php echo $data[1];?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="lefttxt">Name:</td>
-                                            <td><input type="text" name="t1" required pattern="[a-zA-z1 _]{3,50}"
-                                                    title="Please Enter Only Characters and numbers between 1 to 50 for Name" />
-                                            </td>
-                                        </tr><br />
-                                        <tr>
-                                            <td class="lefttxt">Gender:</td>
-                                            <td><input type="radio" name="r1" value="Male"
-                                                    checked="checked" />Male<input type="radio" name="r1"
-                                                    value="Female" />Female</td>
-                                        </tr><br />
-                                        <tr>
-                                            <td class="lefttxt">Mobile Number.</td>
-                                            <td><input type="text" name="t2" required pattern="[0-9]{10,12}"
-                                                    title="Please Enter Only numbers between 10 to 12 for Mobile No" />
-                                            </td>
-                                        </tr><br />
-                                        <tr>
-                                            <td class="lefttxt">Email:</td>
-                                            <td><input type="email" name="t3" required /></td>
-                                            <td><br />
-                                        <tr>
-                                            <td class="lefttxt">Number of Days:</td>
-                                            <td><input type="number" name="t4" required pattern="[1 _]{1,20}"
-                                                    title="Please Enter Only numbers between 1 to 20 for No. oF Days" />
-                                            </td>
-                                            <td><br />
-                                        <tr>
-                                            <td class="lefttxt">Number of Children:</td>
-                                            <td><input type="number" name="t5" required pattern="[1 _]{1,10}"
-                                                    title="Please Enter Only numbers between 1 to 10 for Children" />
-                                            </td>
-                                            <td><br />
-                                        <tr>
-                                            <td class="lefttxt">Number of Adults:</td>
-                                            <td><input type="number" name="t6" required pattern="[1 _]{1,20}"
-                                                    title="Please Enter Only numbers between 1 to 20 for No.Of Adults" />
-                                            </td>
-                                            <td><br />
-                                        <tr>
-                                            <td class="lefttxt">Reservation Message:</td>
-                                            <td><textarea name="t7" required="required" /></textarea></td>
-                                            <td><br />
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td><input type="submit" value="Submit" name="sbmt" /></td>
-                                        </tr>
+                                        <form method="post" enctype="multipart/form-data">
+                                            <tr>
+                                                <td colspan="3" class="middletext">offer
+                                                    Id:&nbsp;&nbsp;&nbsp;<?php echo $data[0];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" class="middletext">Offer
+                                                    Name:&nbsp;&nbsp;&nbsp;<?php echo $data[1];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="lefttxt">Name:</td>
+                                                <td><input class="form-control" type="text" name="t1" required
+                                                        pattern="[a-zA-z1 _]{3,50}"
+                                                        title="Please Enter Only Characters and numbers between 1 to 50 for Name" />
+                                                </td>
+                                            </tr><br />
+                                            <tr>
+                                                <td class="lefttxt">Gender:</td>
+                                                <td><input class="form-check-input" type="radio" name="r1" value="Male"
+                                                        checked="checked" /> Male
+                                                    <br>
+                                                    <input class="form-check-input" type="radio" name="r1"
+                                                        value="Female" />
+                                                    Female <br>
+                                                </td>
+                                            </tr><br />
+                                            <tr>
+                                                <td class="lefttxt">Mobile Number.</td>
+                                                <td><input class="form-control" type="text" name="t2" required
+                                                        pattern="[0-9]{10,12}"
+                                                        title="Please Enter Only numbers between 10 to 12 for Mobile No" />
+                                                </td>
+                                            </tr><br />
+                                            <tr>
+                                                <td class="lefttxt">Email:</td>
+                                                <td><input class="form-control" type="email" name="t3" required />
+                                                </td>
+                                                <td><br />
+                                            <tr>
+                                                <td class="lefttxt">Number of Days:</td>
+                                                <td><input class="form-control" type="number" name="t4" required
+                                                        pattern="[1 _]{1,20}"
+                                                        title="Please Enter Only numbers between 1 to 20 for No. oF Days" />
+                                                </td>
+                                                <td><br />
+                                            <tr>
+                                                <td class="lefttxt">Number of Children:</td>
+                                                <td><input class="form-control" type="number" name="t5" required
+                                                        pattern="[1 _]{1,10}"
+                                                        title="Please Enter Only numbers between 1 to 10 for Children" />
+                                                </td>
+                                                <td><br />
+                                            <tr>
+                                                <td class="lefttxt">Number of Adults:</td>
+                                                <td><input class="form-control" type="number" name="t6" required
+                                                        pattern="[1 _]{1,20}"
+                                                        title="Please Enter Only numbers between 1 to 20 for No.Of Adults" />
+                                                </td>
+                                                <td><br />
+                                            <tr>
+                                                <td class="lefttxt">Reservation Message:</td>
+                                                <td><textarea class="form-control" name="t7"
+                                                        required="required" /></textarea></td>
+                                                <td><br />
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><input type="submit" class="btn btn-primary" value="Submit"
+                                                        name="sbmt" /></td>
+                                            </tr>
 
-                                    </form>
-                            </td>
+                                        </form>
+                                </td>
+                    </tr>
+                </table>
+                </td>
+                </table>
+                </td>
                 </tr>
-            </table>
-            </td>
-            </table>
-            </td>
-            </tr>
-            </table>
+                </table>
+
+            </div>
 
         </div>
-
     </div>
+
 
     <div style="clear:both"></div>
     <div style="clear:both"></div>

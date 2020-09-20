@@ -31,13 +31,17 @@
         window.scrollTo(0, 1);
     }
     </script>
+
     <!--js-->
+
     <script src="js/jquery.min.js"></script>
 
     <!--/js-->
+
 </head>
 
 <body>
+
     <!--header-->
 
 
@@ -147,20 +151,23 @@ if(isset($_POST["sbmt"]))
 	}
 	
 	
-	//check if file already exists
+    //check if file already exists
+    
 	if(file_exists($target_file)){
 		echo "sorry,file already exists.";
 		$uploadok=0;
 	}
 	
-	//check file size
+    //check file size
+    
 	if($_FILES["t3"]["size"]>500000){
 		echo "sorry, your file is too large.";
 		$uploadok=0;
 	}
 	
 	
-	//aloow certain file formats
+    //allow certain file formats
+    
 	if($imagefiletype != "jpg" && $imagefiletype !="png" && $imagefiletype !="jpeg" && $imagefileype !="gif"){
 		echo "sorry, only jpg, jpeg, Png & gif files are allowed.";
 		$uploadok=0;

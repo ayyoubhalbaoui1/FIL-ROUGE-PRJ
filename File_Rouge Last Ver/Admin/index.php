@@ -53,7 +53,7 @@ if($_SESSION['loginstatus']=="")
             <?php include('left.php'); ?>
         </div>
         <div class="col-sm-9" align="center">
-            <h1>WELCOME TO ADMIN PANEL</h1>
+            <h1>Admin Dashboard</h1>
         </div>
 
 

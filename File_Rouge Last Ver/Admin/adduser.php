@@ -38,7 +38,9 @@
 
 <body>
     <!--header-->
-    <!--sticky-->
+
+
+
     <?php
 if($_SESSION['loginstatus']=="")
 {

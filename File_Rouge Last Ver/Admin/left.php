@@ -11,7 +11,7 @@
 <body>
     <table style="width:100%">
         <tr>
-            <td style="font-size:28px">Admin Links</td>
+            <td style="font-size:28px">Admin</td>
         </tr>
 
         <?php if($_SESSION["usertype"]=="Admin")
@@ -84,7 +84,7 @@
         </tr>
 
         <tr>
-            <td><a href="viewenquiry.php">View Reservation</a></td>
+            <td><a href="viewenquiry.php">View Enquiry</a></td>
         </tr>
     </table>
 
